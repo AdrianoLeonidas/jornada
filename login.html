@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      .logo {
+        height: 36px;
+        width: auto;
+        max-width: 120px;
+        margin-right: 12px;
+      }
+      @media (max-width: 600px) {
+        .logo {
+          height: 24px;
+          max-width: 80px;
+          margin-right: 6px;
+        }
+      }
+    </style>
+  </head>
+  <body class="login-bg">
+    <!-- Elementos decorativos de fundo -->
+    <div class="decor-circle decor-circle-1"></div>
+    <div class="decor-circle decor-circle-2"></div>
+    <header class="login-header">
+      <div class="titulo">Login</div>
+      <a href="telainicial.html"><img src="img/logoofi.png" alt="Logo" class="logo-header" /></a>
+    </header>
+    <main>
+      <div class="login-center">
+        <img src="img/logologin.svg" alt="Logo" class="logo-main" />
+        <div class="form-container">
+          <h2 class="login-title">Bem-vindo!</h2>
+          <p class="login-subtitle">Faça login para continuar</p>
+          <hr class="login-divider" />
+          <form id="loginForm">
+            <label for="email">Email:</label>
+            <div class="input-group">
+              <span class="input-icon email-icon"></span>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="login-input"
+              />
+            </div>
+
+            <label for="senha">Senha:</label>
+            <div class="input-group">
+              <span class="input-icon senha-icon"></span>
+              <input
+                type="password"
+                id="senha"
+                name="senha"
+                required
+                class="login-input"
+              />
+            </div>
+
+            <span id="loginError" class="error-message" style="display: none"
+              >Erro ao fazer login!</span
+            >
+            <button type="submit" class="login-btn">Entrar</button>
+          </form>
+          <div class="login-register">
+            Não tem cadastro?
+            <a href="cadastro.html" class="register-link">Cadastre-se</a>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="login-footer">
+      &copy; 2025 Jornada. Todos os direitos reservados.
+    </footer>
+
+    <script>
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault();
+          const email = document.getElementById("email").value.trim();
+          const senha = document.getElementById("senha").value.trim();
+          const loginError = document.getElementById("loginError");
+
+          loginError.style.display = "none";
+
+          try {
+            const resposta = await fetch("php/login.php", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ email, senha }),
+            });
+
+            if (!resposta.ok) {
+              throw new Error("Erro ao conectar ao servidor.");
+            }
+
+            const resultado = await resposta.json();
+
+            if (resultado.success) {
+              // Salva id e nome do usuário no localStorage
+              localStorage.setItem("pdi_user", JSON.stringify({
+                id: resultado.usuario.id,
+                nome: resultado.usuario.nome
+              }));
+              localStorage.setItem("logado", "true");
+              window.location.href = "telainicial.html";
+            } else {
+              loginError.style.display = "block";
+              loginError.textContent =
+                resultado.message || "Erro ao fazer login!";
+            }
+          } catch (error) {
+            loginError.style.display = "block";
+            loginError.textContent = error.message;
+          }
+        });
+    </script>
+  </body>
+</html>

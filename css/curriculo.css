@@ -1,0 +1,183 @@
+/* Definições de cores e estilos globais */
+:root {
+  --purple-primary: #6b21a8;
+  --purple-secondary: #a855f7;
+  --light-gray: #f8f9fa;
+  --border-color: #dee2e6;
+}
+
+body {
+  background-color: var(--light-gray);
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Estilos para componentes reutilizáveis */
+.bg-purple {
+  background-color: var(--purple-primary) !important;
+}
+
+.btn-purple {
+  background-color: var(--purple-primary);
+  color: white;
+  border: 1px solid var(--purple-primary);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-purple:hover {
+  background-color: #581c87;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.btn-outline-purple {
+  color: var(--purple-primary);
+  border-color: var(--purple-primary);
+}
+
+.btn-outline-purple:hover {
+  background-color: var(--purple-primary);
+  color: white;
+}
+
+/* Estilo do formulário principal */
+.card-header h2 {
+  font-weight: bold;
+}
+
+.form-section-title {
+  border-bottom: 2px solid var(--purple-primary);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--purple-primary);
+  font-weight: 600;
+}
+
+.dynamic-item {
+  background-color: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.btn-remove-item {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  background-color: #fce7f3;
+  color: #be185d;
+  border: 1px solid #f9a8d4;
+}
+
+.btn-remove-item:hover {
+  background-color: #ec4899;
+  color: white;
+  border-color: #be185d;
+}
+
+/* Estilos para o preview do currículo (Modal e PDF) */
+#curriculoPreview {
+  font-family: 'Inter', 'Garamond', 'Times New Roman', serif;
+  color: #23272f;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(80, 36, 143, 0.08);
+  padding: 2rem;
+  margin-bottom: 1rem;
+}
+
+#curriculoPreview .header {
+  text-align: center;
+  border-bottom: 2px solid #a855f7;
+  padding-bottom: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+#curriculoPreview h1 {
+  font-size: 2.7rem;
+  font-weight: 700;
+  color: var(--purple-primary);
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+}
+
+#curriculoPreview .contato {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+#curriculoPreview .secao {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+#curriculoPreview .secao h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--purple-secondary);
+  margin-bottom: 0.7rem;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+#curriculoPreview .item {
+  margin-bottom: 1.2rem;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  background: #f8f9fa;
+  box-shadow: 0 2px 8px rgba(80, 36, 143, 0.03);
+}
+
+#curriculoPreview .item h5 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #6b21a8;
+}
+
+#curriculoPreview .item .periodo {
+  font-size: 0.95rem;
+  font-style: italic;
+  color: #666;
+}
+
+#curriculoPreview .item .instituicao {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #444;
+}
+
+#curriculoPreview .item p {
+  font-size: 1rem;
+  line-height: 1.7;
+  text-align: justify;
+  margin-bottom: 0.5rem;
+}
+
+#curriculoPreview ul {
+  list-style: disc inside;
+  padding-left: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+#curriculoPreview ul li {
+  margin-bottom: 0.4rem;
+  font-size: 1rem;
+  color: #23272f;
+}
+
+#curriculoPreview .badge.bg-purple {
+  background-color: var(--purple-primary) !important;
+}

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <title>Jornada De Carreira | PDI </title>
+
+  <style>:root {
+  --roxo-claro: #f5daff;           
+  --roxo-metalico: #b757dd;       
+  --roxo-hover: #901994;
+  --roxo-padrao: #a53aed;           
+  --branco: #ffffff;
+  --texto-principal: #000000;
+    }
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--roxo-claro);
+  color: var(--texto-principal);
+}
+nav{
+  background-color: var(--roxo-padrao);
+  border: none;
+}
+.nav-link {
+  color: var(--branco);
+  font-weight: 500;
+  margin-left: 1rem;
+}
+.nav-link:hover {
+  color: var(--roxo-hover);
+}
+.apresentacao{
+  background-color: var(--branco);
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 32px 0;
+} /*a parte da secretaria*/
+.apresentacao img{
+  padding-left: 0;
+  width: 400px;
+  height: auto;
+  flex-shrink: 0;
+}
+.apresentacao-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  min-width: 0;
+}
+.apresentacao-content h1 {
+  margin-bottom: 0.5rem;
+  font-size: 70px;
+  margin-right: 50px;
+  margin-left: 2rem;
+}
+.apresentacao-content p {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.6;
+}
+.btn-purple {
+  background-color: var(--roxo-metalico);
+  color: rgb(255, 255, 255);
+  border: none;
+  padding: 0.6rem 1.5rem;
+  font-weight: 500;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.btn-purple:hover {
+  background-color: var(--roxo-hover);
+  transform: scale(1.02);
+}
+.hero {
+  background: linear-gradient(to bottom right, var(--roxo-claro), var(--roxo-metalico));
+  padding: 100px 0;
+  min-height: 60vh;
+  color: white;
+}
+.bg-purple {
+  background-color: var(--roxo-padrao);
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.slideRight {
+  color: var(--roxo-padrao);
+  animation: slideRight 1s ease forwards;
+}
+.slideLeft{
+  display: inline-block; 
+  animation: slideLeft 1s ease forwards;
+}
+
+
+</style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg  shadow-sm py-3 ">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="logoofi.png" alt="Jornada De Careira Logo" height="80" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#" onclick="acessarTrilha('curriculo.html')">📄 Currículo</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" onclick="acessarTrilha('cursos_livros.html')">🎓 Recomendações</a></li>
+           <li class="nav-item"><a class="nav-link" href="#" onclick="acessarTrilha('trilhaCarreira.html')"> 💻 minha trilha de carreira</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" onclick="acessarTrilha('trilha.html')">📊 Meu Progresso</a></li>
+          
+        </ul>
+        <button id="btnLogout" class="btn btn-purple ms-3" style="padding: 0.4rem 1.2rem; font-size: 1rem; display: none;">Sair</button>
+      </div>
+    </div>
+  </nav>
+<main>
+  <div class="apresentacao">
+    <a href="telainicial.html">
+      <img src="mulher_secretaria.png" alt="mulher_secretaria" />
+    </a>
+    <div class="apresentacao-content">
+      <h1  class="slideRight display-5 fw-bold "><b>Workflows</b></h1>
+      <h1  align="center"   class="slideLeft display-5 fw-bold">that work.</h1>
+      <p>
+        Com o mercado de trabalho cada vez mais exigente, desenvolver soft skills como comunicação, liderança e inteligência emocional, se tornou essencial. No entanto, muitos profissionais não sabem como aprimorar e demonstrar essas competências. Este projeto propõe trilhas de desenvolvimento personalizadas que ajudam o usuário a identificar, desenvolver e aplicar suas soft skills de forma estratégica, melhorando sua performance e ampliando suas oportunidades profissionais.
+      </p>
+    </div>
+  </div> 
+
+   <section class="hero d-flex align-items-center text-center text-white">
+    <div class="container">
+      <h1 class="display-5 fw-semibold">Faça a sua trilha</h1>
+      <p class="lead">Descubra sua personalidade profissional e dê um passo certeiro na sua jornada de carreira</p>
+      <button onclick="acessarTrilha('formTR.html')" class="btn btn-purple mt-3">Começar🚀</button>
+    </div>
+  </section>
+
+   <div class="container my-5">
+    <div class="mx-auto shadow overflow-hidden" style="max-width: 1000px;">
+      <div id="carouselEstetica" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="img/comunicacao.jpg" class="d-block w-100" style="height: 500px; object-fit: cover;" alt="Imagem comunicação">
+          </div>
+          <div class="carousel-item">
+            <img src="img/conhecimento.jpg" class="d-block w-100" style="height: 500px; object-fit: cover;" alt="Imagem autoconhecimento">
+          </div>
+          <div class="carousel-item">
+            <img src="img/gestao.jpg" class="d-block w-100" style="height: 500px; object-fit: cover;" alt="Imagem gestão de tempo e produtividade">
+          </div>
+        </div>
+        <!-- Controles do carrossel -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselEstetica" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselEstetica" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+</main>
+  <footer class="bg-purple text-white text-center py-3">
+    <small>&copy; 2025 Jornada De Carreira. Todos os direitos reservados.</small>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function acessarTrilha(destino) {
+      const logado = localStorage.getItem("logado");
+      if (logado === "true") {
+        window.location.href = destino;
+      } else {
+        localStorage.setItem("destinoPendente", destino);
+        window.location.href = "login.html";
+      }
+    }
+    function verificarLogoutBtn() {
+      const logado = localStorage.getItem("logado");
+      const btnLogout = document.getElementById("btnLogout");
+      if (logado === "true") {
+        btnLogout.style.display = "inline-block";
+      } else {
+        btnLogout.style.display = "none";
+      }
+    }
+    document.getElementById("btnLogout").onclick = function () {
+      localStorage.removeItem("pdi_user");
+      localStorage.removeItem("pdi_progress");
+      localStorage.removeItem("logado");
+      window.location.href = "login.html";
+    };
+    document.addEventListener("DOMContentLoaded", verificarLogoutBtn);
+  </script>
+ </body>
+</html>

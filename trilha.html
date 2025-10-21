@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PDI Progression App</title>
+    <link rel="stylesheet" href="css/stylet.css" />
+    <link rel="stylesheet" href="css/trilha.css">
+  </head>
+  <body>
+    <!-- Cabeçalho -->
+    <nav class="topbar">
+      <a href="telainicial.html"
+        ><img src="img/logoofi.png" alt="Logo" class="logo"
+      /></a>
+      <div class="logo-text">PDI</div>
+      <div class="status">
+        <span class="badge" id="etapasStatus">🎯 0</span>
+        <span class="badge" id="conquistasStatus">🏅 0</span>
+        <button id="btnLogout" style="margin-left:16px; background:#a53aed; border-radius:8px; padding:0.4rem 1rem; font-size:1rem;">Sair</button>
+      </div>
+    </nav>
+
+    <!-- Tela de login -->
+    <div id="login" class="perfil-login-container">
+      <label for="username">Nome:</label>
+      <input id="username" placeholder="Digite seu nome" />
+      <label for="perfil">Perfil profissional:</label>
+      <select id="perfil">
+        <option value="">Selecione seu perfil profissional</option>
+        <option value="relacao">Relação Interpessoal</option>
+        <option value="lideranca">Liderança</option>
+        <option value="empreendedorismo">Empreendedorismo</option>
+        <option value="comunicacao_eficaz">Comunicação Eficaz</option>
+        <option value="inteligencia_emocional">Inteligência Emocional</option>
+        <option value="adaptabilidade">Adaptabilidade</option>
+        <option value="resolucao_problemas">Resolução de Problemas</option>
+        <option value="trabalho_equipe">Trabalho em Equipe</option>
+        <option value="gestao_tempo">Gestão do Tempo</option>
+        <option value="etica_profissional">Ética Profissional</option>
+      </select>
+      <button id="loginBtn">Entrar</button>
+      <button id="btn-voltar">Voltar</button>
+    </div>
+
+    <!-- Tela principal -->
+    <div id="app" style="display: none">
+      <main>
+        <!-- Perfil do usuário -->
+        <section class="profile">
+          <div class="profile-info">
+            <div class="avatar">👤</div>
+            <input
+              type="file"
+              id="avatarInput"
+              accept="image/*"
+              style="display: none"
+            />
+            <div>
+              <h2 id="userName">Olá, Usuário!</h2>
+              <p id="perfilProfissional">
+                Perfil Profissional: <span>Não definido</span>
+              </p>
+            </div>
+          </div>
+          <button id="btn-mudar-perfil">
+            Selecionar outro perfil profissional
+          </button>
+        </section>
+
+        <!-- Trilhas -->
+        <section class="paths">
+          <h2>Trilhas PDI</h2>
+          <div class="path-list">
+            <!-- Trilhas dinâmicas serão inseridas aqui -->
+          </div>
+        </section>
+
+        <!-- Conquistas -->
+        <section class="achievements">
+          <h2>Conquistas</h2>
+          <div class="badges" id="badges">
+            <!-- Conquistas dinâmicas serão inseridas aqui -->
+          </div>
+        </section>
+      </main>
+      <footer>
+        <p>&copy; 2025 PDI Progression App. Todos os direitos reservados.</p>
+      </footer>
+    </div>
+
+    <script src="js/trilha.js">
+    </script>
+  </body>
+</html>

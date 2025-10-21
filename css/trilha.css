@@ -1,0 +1,329 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #1d0343;
+}
+
+.trilha-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.trilha-header {
+  background: linear-gradient(135deg, #6b21a8 0%, #a855f7 100%);
+  color: white;
+  padding: 30px 0;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.trilha-header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+.trilha-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.trilha-sidebar {
+  flex: 1;
+  min-width: 250px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.trilha-main {
+  flex: 3;
+  min-width: 300px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.trilha-progress {
+  margin-bottom: 20px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 20px;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #6b21a8, #a855f7);
+  border-radius: 10px;
+  transition: width 0.5s ease;
+}
+
+.trilha-steps {
+  position: relative;
+}
+
+.trilha-step {
+  margin-bottom: 30px;
+  padding-left: 30px;
+  position: relative;
+}
+
+.trilha-step::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background-color: #a855f7;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.trilha-step::after {
+  content: '';
+  position: absolute;
+  left: 9px;
+  top: 20px;
+  width: 2px;
+  height: calc(100% + 10px);
+  background-color: #a855f7;
+  z-index: 0;
+}
+
+.trilha-step:last-child::after {
+  display: none;
+}
+
+.trilha-step.completed::before {
+  background-color: #10b981;
+}
+
+.trilha-step.current::before {
+  background-color: #f59e0b;
+}
+
+.trilha-step h3 {
+  margin-top: 0;
+  color: #6b21a8;
+}
+
+.trilha-step p {
+  color: #666;
+}
+
+.trilha-resources {
+  margin-top: 20px;
+}
+
+.resource-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.resource-item:last-child {
+  border-bottom: none;
+}
+
+.resource-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 15px;
+  background-color: #f0e6fa;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b21a8;
+}
+
+.resource-info h4 {
+  margin: 0 0 5px 0;
+  color: #333;
+}
+
+.resource-info p {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.btn-trilha {
+  background-color: #a855f7;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s;
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+.btn-trilha:hover {
+  background-color: #9333ea;
+}
+
+@media (max-width: 768px) {
+  .trilha-content {
+    flex-direction: column;
+  }
+  
+  .trilha-sidebar, .trilha-main {
+    width: 100%;
+  }
+}   /* Estilo do cabeçalho */
+.logo {
+  height: 36px;
+  width: auto;
+  max-width: 120px;
+  margin-right: 12px;
+}
+@media (max-width: 600px) {
+  .logo {
+    height: 24px;
+    max-width: 80px;
+    margin-right: 6px;
+  }
+}
+
+/* Estilo dos botões */
+button {
+  background: linear-gradient(90deg, #a855f7 0%, #6b21a8 100%);
+  color: white;
+  font-weight: bold;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  transition: background 0.3s, transform 0.2s;
+  margin-top: 1rem;
+}
+
+button:hover {
+  background: linear-gradient(90deg, #6b21a8 0%, #a855f7 100%);
+  transform: translateY(-2px) scale(1.04);
+}
+
+button:disabled {
+  background: #d1d5db;
+  color: #9ca3af;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Estilo das conquistas */
+.badge-card {
+  background: #f3f0fa;
+  color: #6b21a8;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  margin: 0.5rem;
+  display: inline-block;
+  text-align: center;
+}
+
+/* Estilo das trilhas */
+.modulo-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.modulo-card h3 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #6b21a8;
+  margin-bottom: 0.5rem;
+}
+
+.modulo-card p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.modulo-card ul {
+  text-align: left;
+  margin: 1rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.modulo-card ul li {
+  font-size: 0.95rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+  padding: 0.8rem 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  background: #f9f9f9;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background 0.3s, border 0.3s;
+}
+
+.modulo-card ul li:hover {
+  background: #ede9fe;
+  border-color: #a855f7;
+}
+
+.modulo-card ul li input[type="checkbox"] {
+  accent-color: #6b21a8;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.modulo-card ul li label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  color: #6b21a8;
+}
+
+.modulo-card ul li label:hover {
+  color: #4c1d95;
+}
+
+.profile-info img {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  background: #e5e7eb;
+}
+
+/* Estilo do ícone de avatar */
+.profile-info .avatar {
+  font-size: 3rem;
+  color: #6b21a8;
+  background: #e5e7eb;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

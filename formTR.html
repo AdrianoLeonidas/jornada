@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perfil Comportamental</title>
+    <link rel="stylesheet" href="css/formTR.css" /><
+  </head>
+  <body style="background: url('img/fotinha.png' );">
+    <div class="overlay-bg"></div>
+    <nav class="topbar">
+      <div style="display: flex; align-items: center">
+        <a href="telainicial.html"
+          ><img src="img/logoofi.png" alt="Logo" class="logo"
+        /></a>
+        <span class="logo-text">Jornada de Carreira</span>
+      </div>
+      <span style="font-size: 1.3rem; font-weight: 600">🎓</span>
+    </nav>
+    <main class="container-centro">
+      <div class="box-form">
+        <div class="detalhe-icone">🧭</div>
+        <div class="detalhe-desc">
+          Descubra seu perfil comportamental e potencialize sua jornada
+          profissional!
+        </div>
+        <h2 class="titulo-form">Perfil Comportamental</h2>
+        <div class="scroll-area">
+          <div id="quiz">
+            <div style="margin-bottom: 1rem">
+              <div
+                id="progressBarContainer"
+                style="
+                  background: #e5e7eb;
+                  border-radius: 9999px;
+                  height: 10px;
+                  width: 100%;
+                  margin-bottom: 10px;
+                "
+              >
+                <div
+                  id="progressBar"
+                  style="
+                    height: 100%;
+                    background: linear-gradient(90deg, #a855f7, #6b21a8);
+                    border-radius: 9999px;
+                    width: 0%;
+                    transition: width 0.4s;
+                  "
+                ></div>
+              </div>
+              <div
+                id="progressText"
+                style="
+                  font-size: 0.98rem;
+                  color: #6b21a8;
+                  text-align: right;
+                  font-weight: 500;
+                "
+              ></div>
+            </div>
+            <div id="perguntaContainer" class="quiz-container"></div>
+          </div>
+          <div id="resultado" class="resultado hidden"></div>
+        </div>
+        <div class="botoes">
+          <button id="voltarBtn">Voltar</button>
+          <button id="proximoBtn">Próxima</button>
+        </div>
+        <button id="btnTrilha" class="hidden">Ir para a Trilha</button>
+      </div>
+      <div class="box-form">
+        <div class="detalhe-icone">💼</div>
+        <div class="detalhe-desc">
+          Avalie seus aspectos profissionais e descubra onde pode evoluir!
+        </div>
+        <h2 class="titulo-form">Perfil Profissional & Melhorias</h2>
+        <div class="scroll-area">
+          <form id="perfilProfForm" class="perfil-form">
+            <div class="pergunta">
+              <label>Você costuma buscar feedback dos colegas?</label>
+              <div class="opcoes">
+                <label
+                  ><input
+                    type="radio"
+                    name="busca_feedback"
+                    value="4"
+                    required
+                  />
+                  Sempre</label
+                >
+                <label
+                  ><input type="radio" name="busca_feedback" value="3" />
+                  Frequentemente</label
+                >
+                <label
+                  ><input type="radio" name="busca_feedback" value="2" /> Às
+                  vezes</label
+                >
+                <label
+                  ><input type="radio" name="busca_feedback" value="1" />
+                  Raramente</label
+                >
+                <label
+                  ><input type="radio" name="busca_feedback" value="0" />
+                  Nunca</label
+                >
+              </div>
+            </div>
+            <div class="pergunta">
+              <label>Você se sente confortável em delegar tarefas?</label>
+              <div class="opcoes">
+                <label
+                  ><input type="radio" name="delegar" value="4" required />
+                  Sempre</label
+                >
+                <label
+                  ><input type="radio" name="delegar" value="3" />
+                  Frequentemente</label
+                >
+                <label
+                  ><input type="radio" name="delegar" value="2" /> Às
+                  vezes</label
+                >
+                <label
+                  ><input type="radio" name="delegar" value="1" />
+                  Raramente</label
+                >
+                <label
+                  ><input type="radio" name="delegar" value="0" /> Nunca</label
+                >
+              </div>
+            </div>
+            <div class="pergunta">
+              <label>Você costuma propor melhorias nos processos?</label>
+              <div class="opcoes">
+                <label
+                  ><input type="radio" name="melhorias" value="4" required />
+                  Sempre</label
+                >
+                <label
+                  ><input type="radio" name="melhorias" value="3" />
+                  Frequentemente</label
+                >
+                <label
+                  ><input type="radio" name="melhorias" value="2" /> Às
+                  vezes</label
+                >
+                <label
+                  ><input type="radio" name="melhorias" value="1" />
+                  Raramente</label
+                >
+                <label
+                  ><input type="radio" name="melhorias" value="0" />
+                  Nunca</label
+                >
+              </div>
+            </div>
+            <div class="pergunta">
+              <label>Você se considera uma pessoa motivada no trabalho?</label>
+              <div class="opcoes">
+                <label
+                  ><input type="radio" name="motivacao" value="4" required />
+                  Sempre</label
+                >
+                <label
+                  ><input type="radio" name="motivacao" value="3" />
+                  Frequentemente</label
+                >
+                <label
+                  ><input type="radio" name="motivacao" value="2" /> Às
+                  vezes</label
+                >
+                <label
+                  ><input type="radio" name="motivacao" value="1" />
+                  Raramente</label
+                >
+                <label
+                  ><input type="radio" name="motivacao" value="0" />
+                  Nunca</label
+                >
+              </div>
+            </div>
+            <div class="pergunta">
+              <label>Você prefere liderar ou colaborar em equipe?</label>
+              <div class="opcoes">
+                <label
+                  ><input type="radio" name="lideranca" value="4" required />
+                  Liderar</label
+                >
+                <label
+                  ><input type="radio" name="lideranca" value="3" />
+                  Frequentemente liderar</label
+                >
+                <label
+                  ><input type="radio" name="lideranca" value="2" />
+                  Colaborar</label
+                >
+                <label
+                  ><input type="radio" name="lideranca" value="1" /> Prefiro não
+                  me envolver</label
+                >
+                <label
+                  ><input type="radio" name="lideranca" value="0" /> Evito
+                  grupos</label
+                >
+              </div>
+            </div>
+            <div class="pergunta">
+              <label>Você se considera uma pessoa criativa?</label>
+              <div class="opcoes">
+                <label
+                  ><input type="radio" name="criatividade" value="4" required />
+                  Sempre</label
+                >
+                <label
+                  ><input type="radio" name="criatividade" value="3" />
+                  Frequentemente</label
+                >
+                <label
+                  ><input type="radio" name="criatividade" value="2" /> Às
+                  vezes</label
+                >
+                <label
+                  ><input type="radio" name="criatividade" value="1" />
+                  Raramente</label
+                >
+                <label
+                  ><input type="radio" name="criatividade" value="0" />
+                  Nunca</label
+                >
+              </div>
+            </div>
+            <div class="pergunta">
+              <label>Como você lida com desafios?</label>
+              <div class="opcoes">
+                <label
+                  ><input type="radio" name="resiliencia" value="4" required />
+                  Encaro de frente</label
+                >
+                <label
+                  ><input type="radio" name="resiliencia" value="3" /> Tento
+                  resolver</label
+                >
+                <label
+                  ><input type="radio" name="resiliencia" value="2" /> Às vezes
+                  consigo</label
+                >
+                <label
+                  ><input type="radio" name="resiliencia" value="1" /> Tento
+                  evitar</label
+                >
+                <label
+                  ><input type="radio" name="resiliencia" value="0" /> Fico
+                  paralisado</label
+                >
+              </div>
+            </div>
+            <div class="pergunta">
+              <label>Você gosta de se comunicar e apresentar ideias?</label>
+              <div class="opcoes">
+                <label
+                  ><input type="radio" name="comunicacao" value="4" required />
+                  Sempre</label
+                >
+                <label
+                  ><input type="radio" name="comunicacao" value="3" />
+                  Frequentemente</label
+                >
+                <label
+                  ><input type="radio" name="comunicacao" value="2" /> Às
+                  vezes</label
+                >
+                <label
+                  ><input type="radio" name="comunicacao" value="1" />
+                  Raramente</label
+                >
+                <label
+                  ><input type="radio" name="comunicacao" value="0" />
+                  Nunca</label
+                >
+              </div>
+            </div>
+            <div class="pergunta">
+              <label>Você costuma tomar decisões rapidamente?</label>
+              <div class="opcoes">
+                <label
+                  ><input type="radio" name="decisao" value="4" required />
+                  Sempre</label
+                >
+                <label
+                  ><input type="radio" name="decisao" value="3" />
+                  Frequentemente</label
+                >
+                <label
+                  ><input type="radio" name="decisao" value="2" /> Às
+                  vezes</label
+                >
+                <label
+                  ><input type="radio" name="decisao" value="1" />
+                  Raramente</label
+                >
+                <label
+                  ><input type="radio" name="decisao" value="0" /> Nunca</label
+                >
+              </div>
+            </div>
+            <div class="pergunta">
+              <label>Você costuma ajudar colegas no trabalho?</label>
+              <div class="opcoes">
+                <label
+                  ><input type="radio" name="colaboracao" value="4" required />
+                  Sempre</label
+                >
+                <label
+                  ><input type="radio" name="colaboracao" value="3" />
+                  Frequentemente</label
+                >
+                <label
+                  ><input type="radio" name="colaboracao" value="2" /> Às
+                  vezes</label
+                >
+                <label
+                  ><input type="radio" name="colaboracao" value="1" />
+                  Raramente</label
+                >
+                <label
+                  ><input type="radio" name="colaboracao" value="0" />
+                  Nunca</label
+                >
+              </div>
+            </div>
+            <div class="pergunta">
+              <label>Você costuma planejar suas tarefas?</label>
+              <div class="opcoes">
+                <label
+                  ><input type="radio" name="planejamento" value="4" required />
+                  Sempre</label
+                >
+                <label
+                  ><input type="radio" name="planejamento" value="3" />
+                  Frequentemente</label
+                >
+                <label
+                  ><input type="radio" name="planejamento" value="2" /> Às
+                  vezes</label
+                >
+                <label
+                  ><input type="radio" name="planejamento" value="1" />
+                  Raramente</label
+                >
+                <label
+                  ><input type="radio" name="planejamento" value="0" />
+                  Nunca</label
+                >
+              </div>
+            </div>
+            <div class="pergunta">
+              <label>Você se considera uma pessoa ética no trabalho?</label>
+              <div class="opcoes">
+                <label
+                  ><input type="radio" name="etica" value="4" required />
+                  Sempre</label
+                >
+                <label
+                  ><input type="radio" name="etica" value="3" />
+                  Frequentemente</label
+                >
+                <label
+                  ><input type="radio" name="etica" value="2" /> Às vezes</label
+                >
+                <label
+                  ><input type="radio" name="etica" value="1" />
+                  Raramente</label
+                >
+                <label
+                  ><input type="radio" name="etica" value="0" /> Nunca</label
+                >
+              </div>
+            </div>
+            <div class="pergunta">
+              <label>Você costuma buscar aprender coisas novas?</label>
+              <div class="opcoes">
+                <label
+                  ><input type="radio" name="aprendizado" value="4" required />
+                  Sempre</label
+                >
+                <label
+                  ><input type="radio" name="aprendizado" value="3" />
+                  Frequentemente</label
+                >
+                <label
+                  ><input type="radio" name="aprendizado" value="2" /> Às
+                  vezes</label
+                >
+                <label
+                  ><input type="radio" name="aprendizado" value="1" />
+                  Raramente</label
+                >
+                <label
+                  ><input type="radio" name="aprendizado" value="0" />
+                  Nunca</label
+                >
+              </div>
+            </div>
+            <div class="pergunta">
+              <label>Você se considera uma pessoa inovadora?</label>
+              <div class="opcoes">
+                <label
+                  ><input type="radio" name="inovacao" value="4" required />
+                  Sempre</label
+                >
+                <label
+                  ><input type="radio" name="inovacao" value="3" />
+                  Frequentemente</label
+                >
+                <label
+                  ><input type="radio" name="inovacao" value="2" /> Às
+                  vezes</label
+                >
+                <label
+                  ><input type="radio" name="inovacao" value="1" />
+                  Raramente</label
+                >
+                <label
+                  ><input type="radio" name="inovacao" value="0" /> Nunca</label
+                >
+              </div>
+            </div>
+            <div class="pergunta">
+              <label>Você costuma dar feedbacks construtivos?</label>
+              <div class="opcoes">
+                <label
+                  ><input type="radio" name="feedback" value="4" required />
+                  Sempre</label
+                >
+                <label
+                  ><input type="radio" name="feedback" value="3" />
+                  Frequentemente</label
+                >
+                <label
+                  ><input type="radio" name="feedback" value="2" /> Às
+                  vezes</label
+                >
+                <label
+                  ><input type="radio" name="feedback" value="1" />
+                  Raramente</label
+                >
+                <label
+                  ><input type="radio" name="feedback" value="0" /> Nunca</label
+                >
+              </div>
+            </div>
+            <div class="pergunta">
+              <label>Você se considera organizado(a) no trabalho?</label>
+              <div class="opcoes">
+                <label
+                  ><input type="radio" name="organizacao" value="4" required />
+                  Sempre</label
+                >
+                <label
+                  ><input type="radio" name="organizacao" value="3" />
+                  Frequentemente</label
+                >
+                <label
+                  ><input type="radio" name="organizacao" value="2" /> Às
+                  vezes</label
+                >
+                <label
+                  ><input type="radio" name="organizacao" value="1" />
+                  Raramente</label
+                >
+                <label
+                  ><input type="radio" name="organizacao" value="0" />
+                  Nunca</label
+                >
+              </div>
+            </div>
+            <div class="pergunta">
+              <label
+                >Você costuma assumir responsabilidades além do esperado?</label
+              >
+              <div class="opcoes">
+                <label
+                  ><input
+                    type="radio"
+                    name="responsabilidade"
+                    value="4"
+                    required
+                  />
+                  Sempre</label
+                >
+                <label
+                  ><input type="radio" name="responsabilidade" value="3" />
+                  Frequentemente</label
+                >
+                <label
+                  ><input type="radio" name="responsabilidade" value="2" /> Às
+                  vezes</label
+                >
+                <label
+                  ><input type="radio" name="responsabilidade" value="1" />
+                  Raramente</label
+                >
+                <label
+                  ><input type="radio" name="responsabilidade" value="0" />
+                  Nunca</label
+                >
+              </div>
+            </div>
+            <button type="submit" class="btn-avaliar">
+              Avaliar Perfil Profissional
+            </button>
+          </form>
+          <div
+            id="resultadosPerfil"
+            class="resultados"
+            style="display: none"
+          ></div>
+        </div>
+      </div>
+    </main>
+
+    <script src="js/formTR.js"></script>
+  </body>
+</html>
