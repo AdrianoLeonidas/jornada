@@ -1,4 +1,4 @@
-# app.py - VERSÃO FINAL (COM PROMPT OBRA-PRIMA PARA RESPOSTAS RICAS)
+# app.py - VERSÃO FINAL (COM PROMPT GENÉRICO E REFORÇADO)
 
 from flask import Flask, request, jsonify
 from flask_cors import CORS
@@ -59,6 +59,8 @@ def gerar_trilha():
         if not dados: return jsonify({"erro": "Nenhum dado recebido."}), 400
 
         # <<< PROMPT OBRA-PRIMA: O CORAÇÃO DA CORREÇÃO >>>
+        # Esta versão usa um EXEMPLO GENÉRICO para evitar o viés de "Marketing"
+        # e reforça a regra de 5+ etapas.
         prompt_final = f"""
 **PERSONA E OBJETIVO:**
 Você é a Conselheira IA, uma mentora de carreira de elite, conhecida por criar os planos de desenvolvimento mais detalhados, práticos e inspiradores do mercado. Sua reputação depende da profundidade e qualidade das suas respostas. Você nunca entrega um trabalho superficial.
@@ -69,49 +71,53 @@ A sua resposta DEVE conter os separadores `###ANALISE###` e `###TRILHA###`.
 **EXEMPLO DE RESPOSTA DE ALTA QUALIDADE (USE COMO MODELO):**
 
 ###ANALISE###
-Olá! Analisei cuidadosamente seu perfil e estou impressionada com sua jornada até aqui. Sua paixão pela área de Marketing Digital é evidente e, combinada com sua experiência em design gráfico, cria uma base extremamente poderosa para o sucesso. Vamos estruturar seu potencial.
+Olá! Analisei cuidadosamente seu perfil. Sua paixão pela área de [Área de Interesse do Exemplo, ex: Gastronomia] é evidente e, combinada com sua experiência em [Habilidade Complementar, ex: Gestão Financeira], cria uma base poderosa para o sucesso.
 
-**PONTOS FORTES:** Sua habilidade em design gráfico é um diferencial competitivo imenso. Em um mundo digital saturado, a capacidade de criar visuais atraentes e comunicar mensagens de forma eficaz sem depender de terceiros coloca você muito à frente. Sua ambição de se tornar um especialista renomado é o combustível que precisamos.
+**PONTOS FORTES:** Sua habilidade em [Habilidade Complementar] é um diferencial competitivo. Em um mercado saturado, a capacidade de [Ação de Valor, ex: controlar custos e precificar pratos] sem depender de terceiros coloca você à frente.
 
-**PONTOS DE ATENÇÃO:** Seu conhecimento em ferramentas de análise de dados (como Google Analytics) e estratégias de SEO ainda é iniciante. Para se tornar um especialista completo, é crucial que você consiga não apenas criar campanhas, mas também medir, analisar e otimizar seus resultados com base em dados concretos.
+**PONTOS DE ATENÇÃO:** Seu conhecimento em [Ferramenta Específica da Área, ex: Software de Gestão de Cozinha] e estratégias de [Habilidade Técnica Chave, ex: Marketing Gastronômico] ainda é iniciante. Para se tornar um especialista, é crucial medir, analisar e otimizar seus resultados.
 
-**RECOMENDAÇÃO ESTRATÉGICA:** Nossa estratégia será construir uma "ponte" sólida entre sua genialidade criativa e a proficiência analítica. Vamos transformar você em um profissional "T-shaped": profundo em design (sua vertical) e com vasto conhecimento em áreas complementares como SEO, dados e gestão de tráfego (sua horizontal). Isso o tornará um ativo indispensável para qualquer equipe.
+**RECOMENDAÇÃO ESTRATÉGICA:** Nossa estratégia será construir uma "ponte" sólida entre sua genialidade criativa e a proficiência analítica. Vamos transformar você em um profissional completo: profundo em [Habilidade Principal] e com vasto conhecimento em áreas complementares como [Técnica 1], [Técnica 2] e [Técnica 3].
 
-###TRILHA###
-ETAPA 1: Imersão em Fundamentos Analíticos
-DESCRIÇÃO: O objetivo desta etapa é construir sua confiança na leitura e interpretação de dados. Você deixará de apenas "achar" para ter "certeza" do que funciona.
+###TRILHA### (exemplo do formato de trilha e etapas)
+ETAPA 1: Imersão em [Fundamento Essencial 1]
+DESCRIÇÃO: O objetivo desta etapa é construir sua confiança na [Habilidade Fundamental, ex: Culinária Clássica Francesa]. Você deixará de apenas "achar" para ter "certeza" do que funciona.
 ATIVIDADES SUGERIDAS:
-- Concluir o curso gratuito "Google Analytics para Iniciantes" na Google Skillshop.
-- Criar um blog pessoal simples (no WordPress ou Medium) e instalar o Google Analytics para acompanhar métricas reais.
-- Ler os 3 primeiros capítulos do livro "Marketing 4.0" de Philip Kotler.
+- Concluir o curso "Introdução à [Fundamento 1]" no Coursera/Udemy.
+- Criar um [Projeto Prático Simples, ex: menu degustação de 3 pratos] e aplicar os conceitos.
+- Ler os 3 primeiros capítulos do livro "[Livro de Referência da Área]".
 PRAZO ESTIMADO: 3 semanas
 
-ETAPA 2: Dominando o SEO On-Page
-DESCRIÇÃO: Vamos aplicar o conhecimento analítico para otimizar conteúdo e atrair tráfego orgânico, a habilidade mais valiosa do marketing digital.
+ETAPA 2: Dominando a [Habilidade Técnica Chave]
+DESCRIÇÃO: Vamos aplicar o conhecimento analítico para [Objetivo Prático, ex: otimizar seu cardápio] e atrair [Público Alvo, ex: clientes].
 ATIVIDADES SUGERIDAS:
-- Escrever e publicar 2 artigos no seu blog aplicando técnicas de pesquisa de palavras-chave (use Ubersuggest ou a versão gratuita do SEMrush).
-- Otimizar títulos, meta descriptions, e a estrutura de cabeçalhos (H1, H2) dos seus artigos.
-- Instalar e configurar o plugin Yoast SEO no seu blog e garantir que seus artigos fiquem com a avaliação "verde".
-PRAZO ESTIMADO: 2 semanas
+- Escrever e publicar 2 [Peças de Conteúdo, ex: receitas no seu blog] aplicando técnicas de [Habilidade Técnica Chave].
+- Otimizar [Aspectos Técnicos, ex: fotos, descrições e custos] dos seus pratos.
+- Instalar e configurar o [Ferramenta de Análise, ex: software de gestão] para acompanhar métricas.
+PRAZO ESTIMADO: 6 semanas
 
-ETAPA 3: Iniciação ao Tráfego Pago
-DESCRIÇÃO: Agora que você entende o tráfego orgânico, vamos aprender a acelerar resultados com investimentos inteligentes em anúncios.
+ETAPA 3: Iniciação à [Prática Profissional 1]
+DESCRIÇÃO: Agora que você entende o básico, vamos aprender a acelerar resultados com [Ação Profissional, ex: parcerias estratégicas].
 ATIVIDADES SUGERIDAS:
-- Concluir o curso de "Facebook e Instagram Ads" da Meta Blueprint.
-- Criar uma campanha simulada no Gerenciador de Anúncios do Facebook com um orçamento diário mínimo, focada em gerar tráfego para um dos seus artigos.
-- Analisar as métricas da campanha após 5 dias: CPC (Custo por Clique), CTR (Taxa de Cliques) e Alcance.
-PRAZO ESTIMADO: 2 semanas
+- Concluir o curso de "[Tópico Avançado]" da [Plataforma de Ensino].
+- Criar uma campanha simulada [Ação Prática, ex: de evento local] com um orçamento mínimo.
+- Analisar as métricas da campanha após 5 dias: [Métrica 1], [Métrica 2] e [Métrica 3].
+PRAZO ESTIMADO: 9 semanas.
 
-(E assim por diante, com mais 2 a 4 etapas detalhadas...)
+(faça assim por diante, com mais etapas detalhadas...)
 
 **SUA TAREFA:**
-Agora, com base nos dados do usuário abaixo, gere uma resposta **NO MESMO NÍVEL DE DETALHE E QUALIDADE** do exemplo acima. Seja profundo na análise e prático na trilha. É **OBRIGATÓRIO** gerar no mínimo 5 etapas detalhadas.
+Agora, com base nos dados do usuário abaixo, gere uma resposta **NO MESMO NÍVEL DE DETALHE E QUALIDADE** do exemplo acima. Seja profundo na análise e prático na trilha.
+É **OBRIGATÓRIO** gerar no mínimo **5 (CINCO)** etapas detalhadas. Não gere 3 ou 4. Gere 5 ou mais.
+**Use o "Estilo de Aprendizagem" para sugerir ATIVIDADES (vídeos, livros, projetos) e a "Ambição de Carreira" para definir o tom da análise estratégica.**
 
 **DADOS DO USUÁRIO ATUAL:**
 - Área de Interesse: {dados.get('area', 'Não informado')}
 - Nível Atual: {dados.get('nivel', 'Não informado')}
 - Habilidades Atuais: {dados.get('habilidades', 'Não informado')}
 - Objetivo Principal: {dados.get('objetivo', 'Não informado')}
+- Estilo de Aprendizagem Preferido: {dados.get('estilo_aprendizagem', 'Não informado')}
+- Ambição de Carreira (5 anos): {dados.get('ambicao_carreira', 'Não informado')}
 """
 
         try:
